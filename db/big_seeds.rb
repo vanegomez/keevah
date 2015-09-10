@@ -52,10 +52,6 @@ class BigSeeds
     end
   end
 
-  def get_categories
-    @categories ||= Category.all
-  end
-
   def create_loan_requests_for_each_borrower
     LoanRequest.populate(500_000) do |request|
       request.title = Faker::Commerce.product_name
@@ -70,7 +66,7 @@ class BigSeeds
       request.user_id = borrowers.sample.id
       LoanRequestsCategory.populate(2) do |category|
         category.loan_request_id = request.id
-        category.category_id = get_categories.shuffle.first.id
+        category.category_id = Category.all.sample.id
       end
     end
   end
