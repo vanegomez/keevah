@@ -3,8 +3,8 @@ require 'populator'
 class BigSeeds
   def run
     create_known_users
-    3.times.create_borrowers
-    20.times.create_lenders # { create_lenders }
+    3.times { create_borrowers }
+    20.times { create_lenders }
     create_loan_requests_for_each_borrower(17)
     create_categories
     create_orders
