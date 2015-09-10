@@ -78,7 +78,7 @@ class BigSeeds
       r.user_id = borrowers.sample.id
       LoanRequestsCategory.populate(4) do |c|
         c.loan_request_id = r.id
-        c.category_id = Category.all.sample.id
+        c.category_id = get_categories.shuffle.first.id
       end
       puts "There are now #{LoanRequest.length} requests"
     end
