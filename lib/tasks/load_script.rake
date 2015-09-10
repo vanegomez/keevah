@@ -1,4 +1,4 @@
-unless Rails.env.production
+unless Rails.env.production?
 require "load_script/session"
 
   namespace :load_script do
