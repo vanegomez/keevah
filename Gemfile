@@ -20,7 +20,7 @@ gem "twitter-bootstrap-rails"
 gem "faker"
 gem "responders"
 gem "traceroute"
-gem "pry-rails"
+gem "pry"
 gem "newrelic_rpm"
 gem "populator"
 gem "rails_12factor", group: :production
