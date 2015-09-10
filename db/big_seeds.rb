@@ -57,20 +57,20 @@ class BigSeeds
   end
 
   def create_loan_requests_for_each_borrower
-    LoanRequest.populate(500_000) do |r|
-      r.title = Faker::Commerce.product_name
-      r.description = Faker::Company.catch_phrase
-      r.amount = 200
-      r.status = [0, 1].sample
-      r.requested_by_date = Faker::Time.between(7.days.ago, 3.days.ago)
-      r.repayment_begin_date = Faker::Time.between(3.days.ago, Time.now)
-      r.repayment_rate = [0, 1].sample
-      r.contributed = 0
-      r.repayed = 0
-      r.user_id = borrowers.sample.id
-      LoanRequestsCategory.populate(4) do |request_cat|
-        request_cat.loan_request_id = request.id
-        request_cat.category_id = get_categories.shuffle.first.id
+    LoanRequest.populate(500_000) do |request|
+      request.title = Faker::Commerce.product_name
+      request.description = Faker::Company.catch_phrase
+      request.amount = 200
+      request.status = [0, 1].sample
+      request.requested_by_date = Faker::Time.between(7.days.ago, 3.days.ago)
+      request.repayment_begin_date = Faker::Time.between(3.days.ago, Time.now)
+      request.repayment_rate = [0, 1].sample
+      request.contributed = 0
+      request.repayed = 0
+      request.user_id = borrowers.sample.id
+      LoanRequestsCategory.populate(2) do |category|
+        category.loan_request_id = request.id
+        category.category_id = get_categories.shuffle.first.id
       end
     end
   end
