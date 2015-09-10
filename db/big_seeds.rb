@@ -11,15 +11,15 @@ class BigSeeds
   end
 
   def lenders
-    User.where(role: 0)
+    @lenders ||= User.where(role: 0)
   end
 
   def borrowers
-    User.where(role: 1)
+    @borrowers ||= User.where(role: 1)
   end
 
   def orders
-    Order.all
+    @orders ||= Order.all
   end
 
   def create_known_users
@@ -65,17 +65,21 @@ class BigSeeds
   end
 
   def create_loan_requests_for_each_borrower(quantity)
-    LoanRequest.populate(quantity) do |lr|
-      lr.title = Faker::Commerce.product_name
-      lr.description = Faker::Company.catch_phrase
-      lr.amount = 200
-      lr.status = [0, 1].sample
-      lr.requested_by_date = Faker::Time.between(7.days.ago, 3.days.ago)
-      lr.repayment_begin_date = Faker::Time.between(3.days.ago, Time.now)
-      lr.repayment_rate = 1
-      lr.contributed = 0
-      lr.repayed = 0
-      lr.user_id = borrowers.sample.id
+    LoanRequest.populate(quantity) do |r|
+      r.title = Faker::Commerce.product_name
+      r.description = Faker::Company.catch_phrase
+      r.amount = 200
+      r.status = [0, 1].sample
+      r.requested_by_date = Faker::Time.between(7.days.ago, 3.days.ago)
+      r.repayment_begin_date = Faker::Time.between(3.days.ago, Time.now)
+      r.repayment_rate = [0, 1].sample
+      r.contributed = 0
+      r.repayed = 0
+      r.user_id = borrowers.sample.id
+      LoanRequestsCategory.populate(4) do |c|
+        c.loan_request_id = r.id
+        c.category_id = get_categories.sample.id
+      end
       puts "There are now #{LoanRequest.length} requests"
     end
   end
