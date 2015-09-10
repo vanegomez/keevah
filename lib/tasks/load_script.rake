@@ -1,4 +1,4 @@
-unless Rails.env.production?
+# unless Rails.env.production?
 require "load_script/session"
 
   namespace :load_script do
@@ -10,7 +10,7 @@ require "load_script/session"
       LoadScript::Session.new(ARGV[1]).run
     end
   end
-end
+# end
 # TODO: Add concurrency factor:
 #if __FILE__ == $0
   #1.times.map do
