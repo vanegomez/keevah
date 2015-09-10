@@ -3,9 +3,9 @@ require 'populator'
 class BigSeeds
   def run
     create_known_users
-    3.times { create_borrowers }
+    3.times  { create_borrowers }
     20.times { create_lenders }
-    create_loan_requests_for_each_borrower(500_000)
+    50.times { create_loan_requests_for_each_borrower }
     create_categories
     create_orders
   end
@@ -64,8 +64,8 @@ class BigSeeds
     end
   end
 
-  def create_loan_requests_for_each_borrower(quantity)
-    LoanRequest.populate(quantity) do |r|
+  def create_loan_requests_for_each_borrower
+    LoanRequest.populate(10_000) do |r|
       r.title = Faker::Commerce.product_name
       r.description = Faker::Company.catch_phrase
       r.amount = 200
@@ -76,12 +76,8 @@ class BigSeeds
       r.contributed = 0
       r.repayed = 0
       r.user_id = borrowers.sample.id
-      LoanRequestsCategory.populate(4) do |c|
-        c.loan_request_id = r.id
-        c.category_id = get_categories.shuffle.first.id
-      end
-      puts "There are now #{LoanRequest.length} requests"
     end
+    puts "There are now #{LoanRequest.length} requests"
   end
 
   def get_lenders
