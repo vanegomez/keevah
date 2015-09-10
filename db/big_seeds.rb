@@ -50,7 +50,6 @@ class BigSeeds
     ["agriculture", "community", "education", "environment", "health", "animals", "wildlife", "children", "health", "sports", "elderly", "art", "culture", "human rights", "welfare"].each do |cat|
       Category.create(title: cat, description: cat + " stuff")
     end
-    put_requests_in_categories
   end
 
   def get_categories
