@@ -76,6 +76,7 @@ class BigSeeds
       lr.contributed = 0
       lr.repayed = 0
       lr.user_id = borrowers.sample.id
+      puts "There are now #{LoanRequest.length} requests"
     end
   end
 
