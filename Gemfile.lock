@@ -105,7 +105,6 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
-    method_source (0.8.2)
     mime-types (2.4.3)
     mini_portile (0.6.2)
     minitest (5.5.1)
@@ -125,10 +124,6 @@ GEM
       multi_json (~> 1.0)
       websocket-driver (>= 0.2.0)
     populator (1.0.0)
-    pry (0.10.1)
-      coderay (~> 1.1.0)
-      method_source (~> 0.8.1)
-      slop (~> 3.4)
     puma (2.11.1)
       rack (>= 1.1, < 2.0)
     rack (1.6.0)
@@ -201,7 +196,6 @@ GEM
       multi_json (~> 1.0)
       simplecov-html (~> 0.9.0)
     simplecov-html (0.9.0)
-    slop (3.6.0)
     sprockets (2.12.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -266,7 +260,6 @@ DEPENDENCIES
   pg
   poltergeist
   populator
-  pry
   puma
   rails (= 4.2.0)
   rails_12factor
