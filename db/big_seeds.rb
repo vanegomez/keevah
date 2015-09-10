@@ -5,7 +5,7 @@ class BigSeeds
     create_known_users
     3.times { create_borrowers }
     20.times { create_lenders }
-    create_loan_requests_for_each_borrower(17)
+    create_loan_requests_for_each_borrower(500_000)
     create_categories
     create_orders
   end
@@ -65,30 +65,45 @@ class BigSeeds
   end
 
   def create_loan_requests_for_each_borrower(quantity)
-    quantity.times do
-      borrowers.each do |borrower|
-        title = Faker::Commerce.product_name
-        description = Faker::Company.catch_phrase
-        status = [0, 1].sample
-        request_by =
-          Faker::Time.between(7.days.ago, 3.days.ago)
-        repayment_begin_date =
-          Faker::Time.between(3.days.ago, Time.now)
-        amount = "200"
-        contributed = "0"
-        request = borrower.loan_requests.create(title: title,
-          description: description,
-          amount: amount,
-          status: status,
-          requested_by_date: request_by,
-          contributed: contributed,
-          repayment_rate: "weekly",
-          repayment_begin_date: repayment_begin_date)
-        puts "created loan request #{request.title} for #{borrower.name}"
-        puts "There are now #{LoanRequest.count} requests"
-      end
+    LoanRequest.populate(quantity) do |lr|
+      lr.title = Faker::Commerce.product_name
+      lr.description = Faker::Company.catch_phrase
+      lr.amount = 200
+      lr.status = [0, 1].sample
+      lr.requested_by_date = Faker::Time.between(7.days.ago, 3.days.ago)
+      lr.repayment_begin_date = Faker::Time.between(3.days.ago, Time.now)
+      lr.repayment_rate = 1
+      lr.contributed = 0
+      lr.repayed = 0
+      lr.user_id = borrowers.sample.id
     end
   end
+
+  # def create_loan_requests_for_each_borrower(quantity)
+  #   quantity.times do
+  #     borrowers.each do |borrower|
+  #       title = Faker::Commerce.product_name
+  #       description = Faker::Company.catch_phrase
+  #       status = [0, 1].sample
+  #       request_by =
+  #         Faker::Time.between(7.days.ago, 3.days.ago)
+  #       repayment_begin_date =
+  #         Faker::Time.between(3.days.ago, Time.now)
+  #       amount = "200"
+  #       contributed = "0"
+  #       request = borrower.loan_requests.create(title: title,
+  #         description: description,
+  #         amount: amount,
+  #         status: status,
+  #         requested_by_date: request_by,
+  #         contributed: contributed,
+  #         repayment_rate: "weekly",
+  #         repayment_begin_date: repayment_begin_date)
+  #       puts "created loan request #{request.title} for #{borrower.name}"
+  #       puts "There are now #{LoanRequest.count} requests"
+  #     end
+  #   end
+  # end
 
   def get_lenders
     @lenders ||= User.where(role: 0).pluck(:id)
