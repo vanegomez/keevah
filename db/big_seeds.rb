@@ -65,7 +65,6 @@ class BigSeeds
   end
 
   def create_loan_requests_for_each_borrower(quantity)
-    categories_id = get_categories.pluck(:id)
     LoanRequest.populate(quantity) do |r|
       r.title = Faker::Commerce.product_name
       r.description = Faker::Company.catch_phrase
@@ -79,7 +78,7 @@ class BigSeeds
       r.user_id = borrowers.sample.id
       LoanRequestsCategory.populate(4) do |c|
         c.loan_request_id = r.id
-        c.category_id = categories_id.sample.id
+        c.category_id = Category.all.sample.id
       end
       puts "There are now #{LoanRequest.length} requests"
     end
