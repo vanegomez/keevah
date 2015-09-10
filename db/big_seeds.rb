@@ -71,16 +71,12 @@ class BigSeeds
     end
   end
 
-  def get_lenders
-    @lenders ||= User.where(role: 0).pluck(:id)
-  end
-
   def create_orders
     loan_requests = LoanRequest.limit(50_000)
     possible_donations = %w(25, 50, 75, 100, 125, 150, 175, 200)
     loan_requests.each do |request|
       donate = possible_donations.sample
-      lender = get_lenders.sample
+      lender = lenders.sample.id
       order = Order.create(cart_items:
           { "#{request.id}" => donate },
         user_id: lender.id)
