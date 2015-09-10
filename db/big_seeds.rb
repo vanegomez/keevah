@@ -5,7 +5,7 @@ class BigSeeds
     create_known_users
     3.times  { create_borrowers }
     20.times { create_lenders }
-    50.times { create_loan_requests_for_each_borrower }
+    create_loan_requests_for_each_borrower
     create_categories
     create_orders
   end
@@ -65,7 +65,7 @@ class BigSeeds
   end
 
   def create_loan_requests_for_each_borrower
-    LoanRequest.populate(10_000) do |r|
+    LoanRequest.populate(500_000) do |r|
       r.title = Faker::Commerce.product_name
       r.description = Faker::Company.catch_phrase
       r.amount = 200
@@ -77,7 +77,6 @@ class BigSeeds
       r.repayed = 0
       r.user_id = borrowers.sample.id
     end
-    puts "There are now #{LoanRequest.length} requests"
   end
 
   def get_lenders
