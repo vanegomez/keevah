@@ -25,6 +25,7 @@ gem "populator"
 gem "rails_12factor", group: :production
 
 group :development, :test do
+  gem "pry-rails"
   gem "awesome_print"
   gem "web-console", "~> 2.0"
   gem "rspec-rails"
