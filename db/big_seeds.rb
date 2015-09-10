@@ -2,11 +2,11 @@ require 'populator'
 
 class BigSeeds
   def run
-    create_known_users
-    3.times  { create_borrowers }
-    20.times { create_lenders }
-    create_categories
-    create_loan_requests_for_each_borrower
+    # create_known_users
+    # 3.times  { create_borrowers }
+    # 20.times { create_lenders }
+    # create_categories
+    # create_loan_requests_for_each_borrower
     create_orders
   end
 
@@ -76,7 +76,7 @@ class BigSeeds
     possible_donations = %w(25, 50, 75, 100, 125, 150, 175, 200)
     loan_requests.each do |request|
       donate = possible_donations.sample
-      lender = lenders.sample.id
+      lender = lenders.sample
       order = Order.create(cart_items:
           { "#{request.id}" => donate },
         user_id: lender.id)
