@@ -60,8 +60,8 @@
       <file leaf-file-name="big_seeds.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/big_seeds.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7775378" vertical-offset="810" max-vertical-offset="1605">
-              <caret line="78" column="6" selection-start-line="78" selection-start-column="6" selection-end-line="78" selection-end-column="6" />
+            <state vertical-scroll-proportion="0.64794815" vertical-offset="795" max-vertical-offset="1560">
+              <caret line="73" column="65" selection-start-line="73" selection-start-column="65" selection-end-line="73" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -930,8 +930,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/big_seeds.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7775378" vertical-offset="810" max-vertical-offset="1605">
-          <caret line="78" column="6" selection-start-line="78" selection-start-column="6" selection-end-line="78" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.64794815" vertical-offset="795" max-vertical-offset="1560">
+          <caret line="73" column="65" selection-start-line="73" selection-start-column="65" selection-end-line="73" selection-end-column="65" />
           <folding />
         </state>
       </provider>
