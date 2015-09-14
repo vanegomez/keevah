@@ -2,11 +2,11 @@ require 'populator'
 
 class BigSeeds
   def run
-    # create_known_users
-    # 3.times  { create_borrowers }
-    # 20.times { create_lenders }
-    # create_categories
-    # create_loan_requests_for_each_borrower
+    create_known_users
+    3.times  { create_borrowers }
+    20.times { create_lenders }
+    create_categories
+    create_loan_requests_for_each_borrower
     create_orders
   end
 
@@ -57,6 +57,7 @@ class BigSeeds
       request.title = Faker::Commerce.product_name
       request.description = Faker::Company.catch_phrase
       request.amount = 200
+
       request.status = [0, 1].sample
       request.requested_by_date = Faker::Time.between(7.days.ago, 3.days.ago)
       request.repayment_begin_date = Faker::Time.between(3.days.ago, Time.now)

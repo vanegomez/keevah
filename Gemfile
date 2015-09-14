@@ -1,5 +1,4 @@
 source "https://rubygems.org"
-ruby '2.2.1'
 gem "rails", "4.2.0"
 gem "pg"
 gem "sass-rails", "~> 5.0"
@@ -23,6 +22,8 @@ gem "responders"
 gem "traceroute"
 gem "newrelic_rpm"
 gem "populator"
+gem "dalli"
+gem 'will_paginate', '~> 3.0.6'
 gem "rails_12factor", group: :production
 
 group :development, :test do

@@ -1,4 +1,8 @@
+<% cache("loan_requests_index_#{params[:page]}") do %>
 <div class="container">
+  <div class="row">
+    <%= will_paginate @loan_requests %>
+  </div>
   <div class="row">
     <% @loan_requests.each do |loan_request| %>
       <div class="col-sm-6 col-md-4 col-lg-4 loan-request">
@@ -25,3 +29,4 @@
   <% end %>
   </div>
 </div>
+<% end %>

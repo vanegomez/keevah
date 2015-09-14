@@ -53,6 +53,7 @@
       <h3 class="page-header">Related Projects</h3>
     </div>
 
+    <% cache do %>
     <% @loan_request.related_projects.each do |p| %>
       <div class="col-sm-3 col-xs-6">
         <%= link_to loan_request_path(p) do %>
@@ -60,6 +61,7 @@
           <p><%= p.title %></p>
         <% end %>
       </div>
+    <% end %>
     <% end %>
 
   </div>
