@@ -4,9 +4,11 @@
 
 <div class="container">
   <div class="row">
+    <ul style="list-style: none">
     <% @categories.each do |category| %>
-      <%= link_to category.title, category_path(category) %>
+      <li class="category"><%= link_to category.title.capitalize, category_path(category) %></li>
     <% end %>
+    </ul>
   </div>
 
   <%= render "shared/search" %>

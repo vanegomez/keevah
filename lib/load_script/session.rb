@@ -46,7 +46,8 @@ module LoadScript
     end
 
     def actions
-      [:browse_loan_requests, :sign_up_as_lender, :browse_loan_requests_pages]
+      [:browse_loan_requests_pages]
+      # :browse_loan_requests, :sign_up_as_lender, :browse_loan_requests_pages, :browse_categories_pages
     end
 
     def log_in(email="demo+horace@jumpstartlab.com", pw="password")
@@ -64,10 +65,23 @@ module LoadScript
     end
 
     def browse_loan_requests_pages
-      random_page = (1..8).to_a.sample
-      session.visit "#{host}/browse?page=#{random_page}"
+      session.visit "#{host}/browse"
       session.all(".lr-about").sample.click
+      session.all(".pagination a").sample.click
       puts "Browsing loan request pages"
+    end
+
+    def browse_categories
+      session.visit "#{host}/browse"
+      session.all(".category").sample.click
+      puts "Browsing by category"
+    end
+
+    def browse_categories_pages
+      session.visit "#{host}/browse"
+      session.all(".category").sample.click
+      session.all(".pagination a").sample.click
+      puts "Browsing by category pages"
     end
 
     def log_out
