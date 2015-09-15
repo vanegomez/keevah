@@ -46,8 +46,12 @@ module LoadScript
     end
 
     def actions
-      [:browse_loan_requests_pages]
-      # :browse_loan_requests, :sign_up_as_lender, :browse_loan_requests_pages, :browse_categories_pages
+      [:lender_makes_loan ]
+      # [:sign_up_as_lender, :sign_up_as_borrower, :browse_loan_requests, :browse_loan_requests_pages, :browse_categories, :browse_categories_pages, :view_a_loan_request, :lender_makes_loan ]
+    end
+
+    def categories
+      ["Agriculture", "Education", "Community"]
     end
 
     def log_in(email="demo+horace@jumpstartlab.com", pw="password")
@@ -59,12 +63,20 @@ module LoadScript
       session.click_link_or_button("Login")
     end
 
+    def log_out
+      session.visit host
+      if session.has_content?("Log out")
+        session.find("#logout").click
+      end
+    end
+
     def browse_loan_requests
       session.visit "#{host}/browse"
       session.all(".lr-about").sample.click
     end
 
     def browse_loan_requests_pages
+      login
       session.visit "#{host}/browse"
       session.all(".lr-about").sample.click
       session.all(".pagination a").sample.click
@@ -72,23 +84,25 @@ module LoadScript
     end
 
     def browse_categories
+      login
       session.visit "#{host}/browse"
       session.all(".category").sample.click
       puts "Browsing by category"
     end
 
     def browse_categories_pages
+      login
       session.visit "#{host}/browse"
       session.all(".category").sample.click
       session.all(".pagination a").sample.click
       puts "Browsing by category pages"
     end
 
-    def log_out
-      session.visit host
-      if session.has_content?("Log out")
-        session.find("#logout").click
-      end
+    def view_a_loan_request
+      login
+      session.visit "#{host}/browse"
+      session.all("a.lr-about").sample.click
+      puts "Viewing an individual loan request"
     end
 
     def new_user_name
@@ -110,10 +124,31 @@ module LoadScript
         session.fill_in("user_password_confirmation", with: "password")
         session.click_link_or_button "Create Account"
       end
+      puts "Sign-up as a Lender"
     end
 
-    def categories
-      ["Agriculture", "Education", "Community"]
+    def sign_up_as_borrower(name = new_user_name)
+      log_out
+      session.find("#sign-up-dropdown").click
+      session.find("#sign-up-as-borrower").click
+      session.within("#borrowerSignUpModal") do
+        session.fill_in("user_name", with: name)
+        session.fill_in("user_email", with: new_user_email(name))
+        session.fill_in("user_password", with: "password")
+        session.fill_in("user_password_confirmation", with: "password")
+        session.click_link_or_button "Create Account"
+      end
+      puts "Sign-up as a Borrower"
+    end
+
+    def lender_makes_loan
+      sign_up_as_lender
+      browse_loan_requests
+      session.click_link_or_button("Contribute $25")
+      session.click_link_or_button("Basket")
+      session.click_link_or_button("Transfer Funds")
+      log_out
+      puts "Lender makes a loan"
     end
   end
 end

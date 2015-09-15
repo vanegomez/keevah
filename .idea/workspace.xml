@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d868747e-b38b-4476-a0ba-e617a3d66053" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/loan_requests/index.html.erb" afterPath="$PROJECT_DIR$/app/views/loan_requests/index.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/load_script/session.rb" afterPath="$PROJECT_DIR$/lib/load_script/session.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/categories/show.html.erb" afterPath="$PROJECT_DIR$/app/views/categories/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="scale_up.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,8 +36,18 @@
       <file leaf-file-name="session.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/load_script/session.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.5507559" vertical-offset="1065" max-vertical-offset="1875">
-              <caret line="54" column="24" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
+            <state vertical-scroll-proportion="-2.7580993" vertical-offset="1937" max-vertical-offset="2400">
+              <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="small_seeds.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/small_seeds.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="812" max-vertical-offset="1695">
+              <caret line="0" column="6" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -417,7 +423,7 @@
     <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="se&#9;FILE&#9;file:///Users/Vane/turing/4module/scale_up/lib/load_script/session.rb&#10;show&#9;FILE&#9;file:///Users/Vane/turing/4module/scale_up/app/views/categories/show.html.erb&#10;le&#9;FILE&#9;file:///Users/Vane/turing/4module/scale_up/app/views/shared/_lender_thumbnail.html.erb&#10;loa&#9;FILE&#9;file:///Users/Vane/turing/4module/scale_up/app/models/loan_request.rb&#10;loan&#9;FILE&#9;file:///Users/Vane/turing/4module/scale_up/app/controllers/loan_requests_controller.rb&#10;sche&#9;FILE&#9;file:///Users/Vane/turing/4module/scale_up/db/schema.rb&#10;rou&#9;FILE&#9;file:///Users/Vane/turing/4module/scale_up/config/routes.rb&#10;envi&#9;FILE&#9;file:///Users/Vane/turing/4module/scale_up/config/environment.rb&#10;nav&#9;FILE&#9;file:///Users/Vane/turing/4module/scale_up/app/views/layouts/_navbar.html.erb&#10;appli&#9;FILE&#9;file:///Users/Vane/turing/4module/scale_up/app/views/layouts/application.html.erb&#10;pr&#9;FILE&#9;file:///Users/Vane/turing/4module/scale_up/config/environments/production.rb&#10;de&#9;FILE&#9;file:///Users/Vane/turing/4module/scale_up/config/environments/development.rb&#10;ro&#9;FILE&#9;file:///Users/Vane/turing/4module/scale_up/config/routes.rb&#10;len&#9;FILE&#9;file:///Users/Vane/turing/4module/scale_up/app/views/shared/_lender_thumbnail.html.erb&#10;gem&#9;FILE&#9;file:///Users/Vane/turing/4module/scale_up/Gemfile&#10;app&#9;FILE&#9;file:///Users/Vane/turing/4module/scale_up/app/views/layouts/application.html.erb&#10;schema&#9;null&#9;null&#10;related_&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="seed&#9;null&#9;null&#10;se&#9;FILE&#9;file:///Users/Vane/turing/4module/scale_up/lib/load_script/session.rb&#10;show&#9;FILE&#9;file:///Users/Vane/turing/4module/scale_up/app/views/categories/show.html.erb&#10;le&#9;FILE&#9;file:///Users/Vane/turing/4module/scale_up/app/views/shared/_lender_thumbnail.html.erb&#10;loa&#9;FILE&#9;file:///Users/Vane/turing/4module/scale_up/app/models/loan_request.rb&#10;loan&#9;FILE&#9;file:///Users/Vane/turing/4module/scale_up/app/controllers/loan_requests_controller.rb&#10;sche&#9;FILE&#9;file:///Users/Vane/turing/4module/scale_up/db/schema.rb&#10;rou&#9;FILE&#9;file:///Users/Vane/turing/4module/scale_up/config/routes.rb&#10;envi&#9;FILE&#9;file:///Users/Vane/turing/4module/scale_up/config/environment.rb&#10;nav&#9;FILE&#9;file:///Users/Vane/turing/4module/scale_up/app/views/layouts/_navbar.html.erb&#10;appli&#9;FILE&#9;file:///Users/Vane/turing/4module/scale_up/app/views/layouts/application.html.erb&#10;pr&#9;FILE&#9;file:///Users/Vane/turing/4module/scale_up/config/environments/production.rb&#10;de&#9;FILE&#9;file:///Users/Vane/turing/4module/scale_up/config/environments/development.rb&#10;ro&#9;FILE&#9;file:///Users/Vane/turing/4module/scale_up/config/routes.rb&#10;len&#9;FILE&#9;file:///Users/Vane/turing/4module/scale_up/app/views/shared/_lender_thumbnail.html.erb&#10;gem&#9;FILE&#9;file:///Users/Vane/turing/4module/scale_up/Gemfile&#10;app&#9;FILE&#9;file:///Users/Vane/turing/4module/scale_up/app/views/layouts/application.html.erb&#10;schema&#9;null&#9;null&#10;related_&#9;null&#9;null" />
   </component>
   <component name="RunManager" selected="Rake.test: scale_up">
     <configuration default="true" type="RakeRunConfigurationType" factoryName="Rake">
@@ -716,14 +722,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/loan_request.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="887" max-vertical-offset="1380">
-          <caret line="84" column="5" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/shared/_lender_thumbnail.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.916667" vertical-offset="101" max-vertical-offset="540">
@@ -775,10 +773,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/db/small_seeds.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="812" max-vertical-offset="1695">
+          <caret line="0" column="6" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/loan_request.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="887" max-vertical-offset="1380">
+          <caret line="84" column="5" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/load_script/session.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.5507559" vertical-offset="1065" max-vertical-offset="1875">
-          <caret line="54" column="24" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
+        <state vertical-scroll-proportion="-2.7580993" vertical-offset="1937" max-vertical-offset="2400">
+          <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
           <folding />
         </state>
       </provider>
