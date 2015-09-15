@@ -30,10 +30,12 @@
         <li>Requested by <%= @loan_request.requested_by %></li>
         <li>Begins Repayment on <%= @loan_request.repayment_begin %></li>
         <li>Repayment rate: <%= @loan_request.repayment_rate.capitalize %></li>
+        <% cache do %>
         <li>Category: <% @loan_request.categories.each do |cat| %>
           <%= cat.title.capitalize %>
         <% end %>
         </li>
+        <% end %>
         <li>Loan Amount: <%= number_to_currency(@loan_request.amount) %></li>
         <li>Loan Contribution: <%= number_to_currency(@loan_request.contributed) %></li>
       </ul>
@@ -52,7 +54,6 @@
     <div class="col-lg-12">
       <h3 class="page-header">Related Projects</h3>
     </div>
-    <%= cache do %>
     <% @loan_request.related_projects.each do |p| %>
       <div class="col-sm-3 col-xs-6">
         <%= link_to loan_request_path(p) do %>
@@ -60,7 +61,6 @@
           <p><%= p.title %></p>
         <% end %>
       </div>
-    <% end %>
     <% end %>
 
   </div>
