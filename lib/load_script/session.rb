@@ -64,7 +64,7 @@ module LoadScript
     def log_in(email="demo+horace@jumpstartlab.com", pw="password")
       log_out
       session.visit host
-      session.click_link("Log In")
+      session.click_link_or_button("Login")
       session.fill_in("email_address", with: email)
       session.fill_in("password", with: pw)
       session.click_link_or_button("Login")
@@ -83,7 +83,6 @@ module LoadScript
     end
 
     def browse_loan_requests_pages
-      log_in
       session.visit "#{host}/browse"
       session.all(".lr-about").sample.click
       session.all(".pagination a").sample.click
@@ -91,14 +90,12 @@ module LoadScript
     end
 
     def browse_categories
-      log_in
       session.visit "#{host}/browse"
       session.all(".category").sample.click
       puts "Browsing by category"
     end
 
     def browse_categories_pages
-      log_in
       session.visit "#{host}/browse"
       session.all(".category").sample.click
       session.all(".pagination a").sample.click
@@ -106,7 +103,6 @@ module LoadScript
     end
 
     def view_a_loan_request
-      log_in
       session.visit "#{host}/browse"
       session.all("a.lr-about").sample.click
       puts "Viewing an individual loan request"
