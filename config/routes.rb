@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   root "home#index"
 
   get "/browse", to: "loan_requests#index"
@@ -28,11 +27,9 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
 
-  # get "*path", to: "home#not_found"
-
   resources :categories, only: [:index, :show]
 
-  %w( 404 422 500 ).each do |code|
-    get code, :to => "errors#show", :code => code
-  end
+  get "/404", :to => "errors#not_found"
+  get "/422", :to => "errors#unacceptable"
+  get "/500", :to => "errors#internal_error"
 end
