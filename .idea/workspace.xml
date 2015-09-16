@@ -96,8 +96,8 @@
       <file leaf-file-name="session.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/load_script/session.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.58315337" vertical-offset="465" max-vertical-offset="2625">
-              <caret line="49" column="7" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.36697248" vertical-offset="1475" max-vertical-offset="2625">
+              <caret line="109" column="36" selection-start-line="109" selection-start-column="36" selection-end-line="109" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -935,8 +935,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/load_script/session.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58315337" vertical-offset="465" max-vertical-offset="2625">
-          <caret line="49" column="7" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.36697248" vertical-offset="1475" max-vertical-offset="2625">
+          <caret line="109" column="36" selection-start-line="109" selection-start-column="36" selection-end-line="109" selection-end-column="36" />
           <folding />
         </state>
       </provider>

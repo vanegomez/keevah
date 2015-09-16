@@ -83,7 +83,7 @@ module LoadScript
     end
 
     def browse_loan_requests_pages
-      login
+      log_in
       session.visit "#{host}/browse"
       session.all(".lr-about").sample.click
       session.all(".pagination a").sample.click
@@ -91,14 +91,14 @@ module LoadScript
     end
 
     def browse_categories
-      login
+      log_in
       session.visit "#{host}/browse"
       session.all(".category").sample.click
       puts "Browsing by category"
     end
 
     def browse_categories_pages
-      login
+      log_in
       session.visit "#{host}/browse"
       session.all(".category").sample.click
       session.all(".pagination a").sample.click
@@ -106,7 +106,7 @@ module LoadScript
     end
 
     def view_a_loan_request
-      login
+      log_in
       session.visit "#{host}/browse"
       session.all("a.lr-about").sample.click
       puts "Viewing an individual loan request"
