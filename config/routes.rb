@@ -31,4 +31,8 @@ Rails.application.routes.draw do
   # get "*path", to: "home#not_found"
 
   resources :categories, only: [:index, :show]
+
+  %w( 404 422 500 ).each do |code|
+    get code, :to => "errors#show", :code => code
+  end
 end

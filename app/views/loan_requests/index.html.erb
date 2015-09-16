@@ -3,14 +3,15 @@
 </div>
 
 <div class="container">
-  <div class="row">
-    <ul>
-      <% @categories.each do |category| %>
-        <li class="category"><%= link_to category.title.capitalize, category_path(category) %></li>
-      <% end %>
-    </ul>
-  </div>
-
+  <% cache do %>
+    <div class="row">
+      <ul>
+        <% @categories.each do |category| %>
+          <li class="category"><%= link_to category.title.capitalize, category_path(category) %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
     <%= render "shared/search" %>
 
   </div>
