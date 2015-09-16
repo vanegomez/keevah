@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d868747e-b38b-4476-a0ba-e617a3d66053" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/errors/404.html.erb" afterPath="$PROJECT_DIR$/app/views/errors/not_found.html.erb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/errors/422.html.erb" afterPath="$PROJECT_DIR$/app/views/errors/unacceptable.html.erb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/errors/500.html.erb" afterPath="$PROJECT_DIR$/app/views/errors/internal_error.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/development.rb" afterPath="$PROJECT_DIR$/config/environments/development.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/errors_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/errors_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="d868747e-b38b-4476-a0ba-e617a3d66053" name="Default" comment="" />
     <ignored path="scale_up.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
