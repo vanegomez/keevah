@@ -46,8 +46,7 @@ module LoadScript
     end
 
     def actions
-      [:sign_up_as_borrower]
-      # [:sign_up_as_lender, :sign_up_as_borrower, :browse_loan_requests, :browse_loan_requests_pages, :browse_categories, :browse_categories_pages, :view_a_loan_request, :lender_makes_loan, :borrower_creates_loan_request ]
+      [:sign_up_as_lender, :sign_up_as_borrower, :browse_loan_requests, :browse_loan_requests_pages, :browse_categories, :browse_categories_pages, :view_a_loan_request, :lender_makes_loan, :borrower_creates_loan_request ]
     end
 
     def categories
